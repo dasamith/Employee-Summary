@@ -86,7 +86,7 @@ function ManagerQuestions() {
     ];
 
     inquirer.prompt(questions).then(function (answers) {
-        console.log('these are our answers in the .then for intern questions!!', answers);
+        console.log('these are our answers in the .then for manager questions!!', answers);
         //var internWeCreated = new Manager(answers.first_name, 1, answers.Email, answers.school);
         //console.log('this is intern we just made', internWeCreated)
 
