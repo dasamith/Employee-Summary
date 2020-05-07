@@ -13,10 +13,10 @@ I Created a template engine application that allows the user to enter data into 
 ## Build status
 project still in development phase
 
-Build status of continus integratio
-tools: (to be used):
-    1. jenkins
-    2. heroku
+    Build status of continus integratio
+    tools: (to be used):
+        1. jenkins
+        2. heroku
     
 [![Build Status](https://travis-ci.org/akashnimare/foco.svg?branch=master)](https://travis-ci.org/akashnimare/foco)
 [![Windows Build Status](https://ci.appveyor.com/api/projects/status/github/akashnimare/foco?branch=master&svg=true)](https://ci.appveyor.com/project/akashnimare/foco/branch/master)
