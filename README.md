@@ -1,6 +1,6 @@
 # Template Engine - Employee Summary
 
-I Created a template engine application that allows the user to enter data into terminal and generates a webpage for a Development team showing all the employee information
+I Created a template engine application that allows the user to enter data into terminal and generates a webpage for a Development team showing all the employee information. https://github.com/dasamith/Employee-Summary
 
 
 ## Acceptance Criteria
