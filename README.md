@@ -65,6 +65,7 @@ https://www.npmjs.com/package/inquirer
 
 ## Tests
 project still in development phase and Passes all the test
+
     To Run the test script: npm run test
     To run the template engine: node app.js
 
