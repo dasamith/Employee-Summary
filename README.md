@@ -49,20 +49,24 @@ tools: (to be used):
 
 ## Installation
 
-https://dasamith.github.io/Weather-Dashboard/
-To Run the test script: npm run test
-To run the template engine: node app.js
+https://dasamith.github.io/Employee-Summary/
+
+    To Run the test script: npm run test
+    To run the template engine: node app.js
 
 ## Screenshot
+NA
 
 ![Screenshot](image/Capture.JPG)
 
 ## API Reference
 
-https://openweathermap.org/ 
+https://www.npmjs.com/package/inquirer
 
 ## Tests
-project still in development phase
+project still in development phase and Passes all the test
+    To Run the test script: npm run test
+    To run the template engine: node app.js
 
 
 ## Contribute
