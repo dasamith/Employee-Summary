@@ -10,6 +10,8 @@ const outputPath = path.join(OUTPUT_DIR, "team.html");
 
 const render = require("./lib/htmlRenderer");
 
+var team = []
+
 var questions = [
     {
         type: 'list',
@@ -30,6 +32,12 @@ inquirer.prompt(questions).then(function (answers) {
         ManagerQuestions()
         console.log('time to ask manager question?')
     }
+    else if (answers.employeeType === 'Engineer') {
+
+        EngineerQuestions()
+        console.log('time to ask Engineer question?')
+    }
+
 
 
 });
@@ -59,6 +67,7 @@ function internQuestions() {
     inquirer.prompt(questions).then(function (answers) {
         console.log('these are our answers in the .then for intern questions!!', answers);
         var internWeCreated = new Intern(answers.first_name, 1, answers.Email, answers.school);
+        team.push(internWeCreated)
         console.log('this is intern we just made', internWeCreated)
 
     });
@@ -87,10 +96,41 @@ function ManagerQuestions() {
 
     inquirer.prompt(questions).then(function (answers) {
         console.log('these are our answers in the .then for manager questions!!', answers);
-        //var internWeCreated = new Manager(answers.first_name, 1, answers.Email, answers.school);
-        //console.log('this is intern we just made', internWeCreated)
+        var ManagerWeCreated = new Manager(answers.first_name, 1, answers.Email, answers.Office_number);
+        team.push(ManagerWeCreated)
+        console.log('this is intern we just made', ManagerWeCreated)
 
     });
+}
+function EngineerQuestions() {
+    console.log('time to ask intern questions!!!')
+
+    var questions = [
+        {
+            type: 'input',
+            name: 'first_name',
+            message: "What's your first name"
+        },
+        {
+            type: 'input',
+            name: 'Email',
+            message: "What's your email name"
+        },
+        {
+            type: 'input',
+            name: 'Github',
+            message: "What's yours Github number ?"
+        },
+
+    ];
+    inquirer.prompt(questions).then(function (answers) {
+        console.log('these are our answers in the .then for Engineer questions!!', answers);
+        var EngineerWeCreated = new Engineer(answers.first_name, 1, answers.Email, answers.Github);
+        team.push(EngineerrWeCreated)
+        console.log('this is intern we just made', EngineerWeCreated)
+
+    });
+
 }
 // Write code to use inquirer to gather information about the development team members,
 // and to create objects for each team member (using the correct classes as blueprints!)

@@ -9,6 +9,15 @@ class Employee {
     getRole() {
         return 'Employee'
     }
+    getEmail() {
+        return this.email;
+    }
+    getId() {
+        return this.id;
+    }
+    getName() {
+        return this.name;
+    }
 
 }
 
