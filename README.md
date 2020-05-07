@@ -5,9 +5,9 @@ I Created a template engine application that allows the user to enter data into 
 
 ## Acceptance Criteria
 
-GIVEN terminal with input
-WHEN manager enters personal information of his employee
-THEN it will generate a webpage that displays his/her team's basic info
+    GIVEN terminal with input
+    WHEN manager enters personal information of his employee
+    THEN it will generate a webpage that displays his/her team's basic info
 
 
 ## Build status
