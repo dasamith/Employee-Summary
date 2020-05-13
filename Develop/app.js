@@ -15,27 +15,55 @@ var listManager = [];
 var listEngineer = [];
 var listIntern = [];
 
-var questions = [{
-    type: 'list',
-    name: 'employeeType',
-    message: "What type of Employee would you like to make ?",
-    choices: ['Manager', 'Intern', 'Engineer']
-},];
+var team = []
+
+function starterQ() {
+    var questions = [{
+        type: 'list',
+        name: 'employeeType',
+        message: "What type of Employee would you like to make ?",
+        choices: ['Manager', 'Intern', 'Engineer']
+    },];
 
 
-inquirer.prompt(questions).then(function (answers) {
-    console.log('these are our answers in the .then!!', answers);
+    inquirer.prompt(questions).then(function (answers) {
+        console.log('these are our answers in the .then!!', answers);
 
-    if (answers.employeeType === 'Intern') {
-        internQuestions()
-    } else if (answers.employeeType === 'Manager') {
-        ManagerQuestions()
-    } else if (answers.employeeType === "Engineer") {
-        EngineerQuestions();
-    }
+        if (answers.employeeType === 'Intern') {
+            internQuestions()
+        } else if (answers.employeeType === 'Manager') {
+            ManagerQuestions()
+        } else if (answers.employeeType === "Engineer") {
+            EngineerQuestions();
+        }
 
-});
+    });
+}
+starterQ()
 
+function addAnother() {
+    console.log('Would u like to add another ???')
+    var questions = [
+        {
+            type: "confirm",
+            name: "Another",
+            message: "Would u like to add another ",
+        }
+    ]
+    inquirer.prompt(questions).then(function (answers) {
+        console.log(answers);
+        if (answers.Another === true) {
+            starterQ()
+        } else {
+            console.log('TIME TO PRINT HTML OUT!!!!', team)
+            var html = render(team)
+            console.log('html working ??', html)
+            fs.writeFile('team.html', html, function (err) {
+
+            })
+        }
+    })
+}
 
 function internQuestions() {
     console.log('time to ask intern questions!!!')
@@ -61,6 +89,8 @@ function internQuestions() {
         console.log('these are our answers in the .then for intern questions!!', answers);
         var internWeCreated = new Intern(answers.first_name, 1, answers.Email, answers.school);
         console.log('this is intern we just made', internWeCreated)
+        team.push(internWeCreated)
+        addAnother()
         // listIntern.push(internWeCreated);
         // console.log("List: " + list[0].getSchool());
     });
@@ -91,6 +121,8 @@ function ManagerQuestions() {
         console.log('these are our answers in the .then for Manager questions!!', answers);
         var ManagerWeCreated = new Manager(answers.first_name, 1, answers.Email, answers.Office_number);
         console.log('this is intern we just made', ManagerWeCreated)
+        team.push(ManagerWeCreated)
+        addAnother()
 
     });
 }
@@ -119,6 +151,8 @@ function EngineerQuestions() {
         console.log('these are our answers in the .then for Manager questions!!', answers);
         var EngineerWeCreated = new Engineer(answers.first_name, 1, answers.Email, answers.Github);
         console.log('this is intern we just made', EngineerWeCreated)
+        team.push(EngineerWeCreated)
+        addAnother()
     });
 }
 
